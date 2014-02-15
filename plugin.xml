@@ -21,7 +21,7 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     	</config-file -->
 
-		<source-file src="src/it/weconstudio/phonegap/plugins/android/IpAddress.java" target-dir="src/it/weconstudio/phonegap/plugin/ipaddress" />
+		<source-file src="src/it/weconstudio/phonegap/plugins/android/IpAddress.java" target-dir="src/it/weconstudio/phonegap/plugins/android" />
     	</platform>
 
     </plugin>
