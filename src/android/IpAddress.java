@@ -13,9 +13,12 @@ import android.util.Log;
  
 public class IpAddress extends CordovaPlugin {
  
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
+    //public PluginResult execute(String action, JSONArray args, String callbackId) {
+	@Override
+    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
+    	return true;
         //if (action.equals("get")) {
-        	return new PluginResult(PluginResult.Status.OK, "1111");
+        	//return new PluginResult(PluginResult.Status.OK, "1111");
             //String ipAddress = getIpAddress();
             //if (ipAddress != null && ipAddress.length() > 0) {
             //    return new PluginResult(PluginResult.Status.OK, ipAddress);

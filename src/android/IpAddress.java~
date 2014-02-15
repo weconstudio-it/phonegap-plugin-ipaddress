@@ -15,13 +15,13 @@ public class IpAddress extends CordovaPlugin {
  
     public PluginResult execute(String action, JSONArray args, String callbackId) {
         //if (action.equals("get")) {
-        	//return new PluginResult(PluginResult.Status.OK, "1111");
-            String ipAddress = getIpAddress();
-            if (ipAddress != null && ipAddress.length() > 0) {
-                return new PluginResult(PluginResult.Status.OK, ipAddress);
-            } else {
-                return new PluginResult(PluginResult.Status.ERROR);
-            }
+        	return new PluginResult(PluginResult.Status.OK, "1111");
+            //String ipAddress = getIpAddress();
+            //if (ipAddress != null && ipAddress.length() > 0) {
+            //    return new PluginResult(PluginResult.Status.OK, ipAddress);
+            //} else {
+            //    return new PluginResult(PluginResult.Status.ERROR);
+            //}
         //} else {
          //   return new PluginResult(PluginResult.Status.INVALID_ACTION);
         //}
