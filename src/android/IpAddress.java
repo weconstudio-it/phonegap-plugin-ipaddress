@@ -1,4 +1,4 @@
-package it.weconstudio.phonegap.plugin.ipaddress;
+package it.weconstudio.phonegap.plugins;
  
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -15,10 +15,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
  
 import android.util.Log;
- 
+
 public class IpAddress extends CordovaPlugin {
  
-    //public PluginResult execute(String action, JSONArray args, String callbackId) {
 	@Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     	
@@ -32,21 +31,8 @@ public class IpAddress extends CordovaPlugin {
             
             return false;
         }
-    	
-    	
-        //if (action.equals("get")) {
-        	//return new PluginResult(PluginResult.Status.OK, "1111");
-            //String ipAddress = getIpAddress();
-            //if (ipAddress != null && ipAddress.length() > 0) {
-            //    return new PluginResult(PluginResult.Status.OK, ipAddress);
-            //} else {
-            //    return new PluginResult(PluginResult.Status.ERROR);
-            //}
-        //} else {
-         //   return new PluginResult(PluginResult.Status.INVALID_ACTION);
-        //}
     }
- 
+
     private String getIpAddress() {
         try {
             for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
@@ -61,6 +47,7 @@ public class IpAddress extends CordovaPlugin {
         } catch (SocketException ex) {
             Log.e("IpAddress", ex.toString());
         }
+        
         return null;
     }
 }
