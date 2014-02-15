@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="it.weconstudio.phonegap.plugin.ipaddress" version="0.1">
+        <name>IpAddress</name>
+        <description>Recupera l'indirizzo IP del device</description>
+        <license>Apache 2.0</license>
+	<author>Weconstudio</author>
+        <keywords>weconstudio,ipaddress</keywords>
+
+	<js-module src="www/IpAddress.js" name="IpAddress">
+        	<clobbers target="window.IpAddress" />
+    	</js-module>
+
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+		    <feature name="IpAddress" >
+		        <param name="android-package" value="it.weconstudio.phonegap.plugin.ipaddress.IpAddress"/>
+		    </feature>
+		</config-file>
+		
+
+		<!-- config-file target="AndroidManifest.xml" parent="/*">
+	            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        	</config-file -->
+
+		<source-file src="src/android/IpAddress.java" target-dir="src/it/weconstudio/phonegap/plugin/ipaddress" />
+    	</platform>
+
+    </plugin>
+
