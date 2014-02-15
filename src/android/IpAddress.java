@@ -22,9 +22,18 @@ public class IpAddress extends CordovaPlugin {
 	@Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     	
-    	callbackContext.success("cristelli");
+    	String ipAddress = getIpAddress();
+        if (ipAddress != null && ipAddress.length() > 0) {
+            callbackContext.success(ipAddress);
+            
+            return true;
+        } else {
+            callbackContext.error("Operation failed");
+            
+            return false;
+        }
     	
-    	return true;
+    	
         //if (action.equals("get")) {
         	//return new PluginResult(PluginResult.Status.OK, "1111");
             //String ipAddress = getIpAddress();
