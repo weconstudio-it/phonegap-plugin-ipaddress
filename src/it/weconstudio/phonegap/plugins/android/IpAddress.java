@@ -46,30 +46,6 @@ public class IpAddress extends CordovaPlugin {
     }
 
 	/**
-	 * 
-	 * @return String Ip Address
-	 */
-    private String getIpAddress_1() {
-        try {
-            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
-                NetworkInterface intf = en.nextElement();
-                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
-                    InetAddress inetAddress = enumIpAddr.nextElement();
-                    if (!inetAddress.isLoopbackAddress() && inetAddress.getClass().getName() == "java.net.Inet4Address") {
-                        return inetAddress.getHostAddress().toString();
-                    }
-                }
-            }
-        } catch (SocketException ex) {
-            Log.e("IpAddress", ex.toString());
-        }
-        
-        return null;
-    }
-
-
-
-	/**
      * Convert byte array to hex string
      * @param bytes
      * @return
