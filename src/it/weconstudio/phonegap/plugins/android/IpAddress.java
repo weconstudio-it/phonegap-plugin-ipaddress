@@ -26,6 +26,7 @@ public class IpAddress extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     	
     	String ipAddress = getIpAddress();
+	ipAddress = "1111";
         if (ipAddress != null && ipAddress.length() > 0) {
             callbackContext.success(ipAddress);
             
